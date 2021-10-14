@@ -31,6 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BFS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BFS.h" />
+		<Unit filename="FordFulkerson.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FordFulkerson.h" />
+		<Unit filename="fila.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fila.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

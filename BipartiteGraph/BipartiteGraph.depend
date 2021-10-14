@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634188876 source:d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1634187059 d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\fila.h
+
+1634186950 source:d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\bfs.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1634189256 source:d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\fordfulkerson.c
+	<stdio.h>
+	<stdlib.h>
+	"FordFulkerson.h"
+	"BFS.h"
+
+1634187089 d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\fordfulkerson.h
+
+1634185144 d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\bfs.h
+
+1634188694 source:d:\ftsigbey\documents\github projects\analise de algoritmo\francisjoao_finalproject_aa_rr_2021\bipartitegraph\main.c
+	"FordFulkerson.h"
+	<stdio.h>
+	<stdlib.h>
+
