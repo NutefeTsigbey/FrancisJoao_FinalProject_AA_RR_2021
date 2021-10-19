@@ -2,56 +2,56 @@
 #include <stdlib.h>
 #include "FordFulkerson.h"
 #include "BFS.h"
+//max_flow
+int FordFulkerson(int vert,int **graph){
 
-int FordFulkerson(int vertice,int **grafo){
     int i;
-    int fluxo_maximo = 0; // variável que retornará o fluxo máximo desejado.
-    int **fluxo;
-    fluxo = (int**)calloc(vertice+2,sizeof(int*)); //criação do grafo residual - fluxo - em memória dinâmica.
+    int max_flow = 0; // variï¿½vel que retorna o fluxo mï¿½ximo desejado.
+    int **flow;
+    flow=(int**)calloc(vert+2,sizeof(int*)); //cria grafo residual - fluxo - usando alocaÃ§Ã£o dinï¿½mica de memï¿½ria .
 
-    for (i = 0; i < vertice+2; i++){
-            fluxo[i] = (int)calloc(vertice+2, sizeof(int));/*alocação de uma coluna completa para o grafo fluxo,
-            o tamanho é vértive+2 pois já crio a A-origem e B-destino no grafo, que serão os dois ultimos elementos. este é o grafo residual*/
-
+    for (i=0; i<vert+2; i++){
+        flow[i]=(int)calloc(vert+2, sizeof(int));//aloca uma coluna completa para o graph flow,
     }
 
-    int *caminho;
-    caminho = (int*)malloc((vertice+2)*sizeof(int)); //criado o vetor que guardará o caminho da busca em largura realizada.
+    int *path;    
+    path=(int*)malloc((vert+2)*sizeof(int)); //criado o vetor que guardarï¿½ o path da busca em largura realizada.
 
-    while(buscaLargura(vertice, caminho, grafo, fluxo)){ // enquanto a busca de caminhos no algoritmo da Busca em Largura exitir
-        int incremento_maximo = 999999; // valor alto para que não seja nunca o menor na comparação dentro do for
-        for (i = vertice+1; caminho[i] >=0; i = caminho[i]){ //leitura do caminho de trás para frente para determinar o incremento máximo daquele caminho
+    while(BFS(vert, path, graph, flow)){ // enquanto a busca de caminhos no algoritmo da Busca em Largura exitir
+        
+        int max_increase = 999999; // valor alto para que nï¿½o seja nunca o menor na comparaï¿½ï¿½o dentro do for
 
-            if(incremento_maximo < (grafo[caminho[i]][i] - fluxo[caminho[i]][i])) {
-                incremento_maximo = incremento_maximo;
-            } else {
-                incremento_maximo = grafo[caminho[i]][i] - fluxo[caminho[i]][i];
+        for (i=vert+1; path[i]>=0; i=path[i]){ //leitura do path de trï¿½s para frente para determinar o incremento mï¿½ximo daquele path
 
+            if(max_increase<(graph[path[i]][i]-flow[path[i]][i])) {
+                max_increase=max_increase;
+            } 
+
+            else {
+                max_increase=graph[path[i]][i]-flow[path[i]][i];
             }
 
-                                                        }
+        }
 
-        for (i = vertice+1; caminho[i] >=0; i = caminho[i]){ //ler caminho de trás para frente, incrementando ou decrementando seu valor de acordo com sua direção.
-            fluxo[caminho[i]][i] = fluxo[caminho[i]][i] + incremento_maximo; //incrementado
-            fluxo[i][caminho[i]] = fluxo[caminho[i]][i] - incremento_maximo; //decrementando
+        for (i=vert+1; path[i]>=0; i=path[i]){ //ler path de trï¿½s para frente, incrementando ou decrementando seu valor de acordo com sua direï¿½ï¿½o.
+            flow[path[i]][i] = flow[path[i]][i] + max_increase; //incrementado
+            flow[i][path[i]] = flow[path[i]][i] - max_increase; //decrementando
 
-                                                            }
+        }
 
-        fluxo_maximo = fluxo_maximo + incremento_maximo; //fluxo máximo é determinado
-
-        printf("Valor do Destino: %d\n", incremento_maximo);
-
+        max_flow=max_flow+max_increase; //flow mï¿½ximo ï¿½ determinado
+        printf("Valor do Destino: %d\n", max_increase);
     }
 
-    free(caminho);
+    free(path);
 
-    for (i = 0; i < vertice+2; i++){
-        free(fluxo[i]); //libero memória alocada para cada elemento do grafo fluxo
-                                    }
+    for (i=0; i<vert+2; i++){
+        free(flow[i]); //libero memï¿½ria alocada para cada elemento do graph flow
+    }
 
-    free(fluxo);
+    free(flow);
 
-    return fluxo_maximo;
+    return max_flow;
 }
 
 

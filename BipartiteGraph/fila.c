@@ -3,51 +3,54 @@
 #include "fila.h"
 
 //criar ponteiro da fila
-fila *criaFila(){
+fila *cria_fila(){
 
     fila *f;
-    f = (fila*) malloc (sizeof(fila));
-    f->primeiro = NULL;
-    f->ultimo = NULL;
+    f=(fila*) malloc (sizeof(fila));
+    f->first=NULL;
+    f->last=NULL;
     return f;
 
 }
-//definição da função pra desenfileirar
-int desenfileirar(fila *f, int *visitado){
-    if (f->primeiro == NULL){
+
+//definiï¿½ï¿½o da funï¿½ï¿½o pra enfileirar fila
+void faz_fila(int vert, fila *f, int *visited){
+
+    nodo *n;
+    n=(nodo*)malloc(sizeof(nodo));
+    n->vert=vert;
+    visited[n->vert]=1;
+    n->prox=NULL;
+    n->ant=NULL;
+
+    if (f->first==NULL){
+        f->first=n;
+        f->last=n;
+
+    } else {
+        f->last->prox=n;
+        f->last=n;
+
+    }
+}
+
+//definiï¿½ï¿½o da funï¿½ï¿½o pra desenfileirar
+int quebra_Fila(fila *f, int *visited){
+    
+    if (f->first==NULL){
         return -1;
     }
 
-    nodo *q;
-    q = f->primeiro;
-    visitado[q->vertice] = 2;
-    f->primeiro = f->primeiro->prox;
-    int retorno = q->vertice;
-    free (q);
+    nodo *n;
+    n=f->first;
+    visited[n->vert]=2;
+    f->first=f->first->prox;
+    int volta=n->vert;
+    free (n);
 
-    return retorno;
+    return volta;
 
 }
 
 
-//definição da função pra enfileirar fila
-void enfileirar(int vertice, fila *f, int *visitado){
-
-    nodo *q;
-    q = (nodo*)malloc(sizeof(nodo));
-    q->vertice = vertice;
-    visitado[q->vertice] = 1;
-    q->prox = NULL;
-    q->ant = NULL;
-
-    if (f->primeiro == NULL){
-        f->primeiro = q;
-        f->ultimo = q;
-
-    } else {
-        f->ultimo->prox = q;
-        f->ultimo = q;
-
-    }
-}
 

@@ -3,41 +3,42 @@
 #include "fila.h"
 
 //funcao de busca em largura, BFS
-int buscaLargura(int vertice, int *caminho, int **grafo, int **fluxo){
+int BFS(int vert, int *path, int **graph, int **flow){
 
-    int A_origem = vertice+1; //determinando que a A-origem é penultimo elemento
-    int B_destino = vertice+2; //determinando que  B-destino é o ultimo elemento
-    fila *f = criaFila(); //função de criar fila que retorna uma fila do tipo fila
+    int A_origin = vert+1; //determinando que a A-origem ï¿½ penultimo elemento
+    int B_destiny = vert+2; //determinando que  B-destino ï¿½ o ultimo elemento
 
-    int *visitado; // 0 é não-visitado,1 é visitado, 2 é visitado todos os vizinhos
-    visitado = (int*)calloc((vertice+2), sizeof(int)); //alocação cont para o vetor visitado
-    for(int i = 0; i < vertice+2; i++){
-        visitado[i] = 0; // colocando todos como não-visitados, ou seja, 0
+    fila *f = cria_fila(); //funï¿½ï¿½o de criar fila que retorna uma fila do tipo fila
+
+    int *visited; // 0 ï¿½ nï¿½o-visited,1 ï¿½ visited, 2 ï¿½ visited todos os vizinhos
+    visited = (int*)calloc((vert+2), sizeof(int)); //alocaï¿½ï¿½o cont para o vetor visited
+    for(int i = 0; i < vert+2; i++){
+        visited[i] = 0; // colocando todos como nï¿½o-visitados, ou seja, 0
     }
 
-    enfileirar(A_origem-1, f, visitado); //enfileirar o vértice origem na fila, A-origem se torna visitado .1 no vetor visitado
+    faz_fila(A_origin-1, f, visited); //enfileirar o vï¿½rtice origem na fila, A-origem se torna visited .1 no vetor visited
 
-    while(f->primeiro != NULL){ //condição: enquanto ainda existir elemento na fila, ainda tem lugar pra visitar
+    while(f->first != NULL){ //condiï¿½ï¿½o: enquanto ainda existir elemento na fila, ainda tem lugar pra visitar
 
-        int i = desenfileirar(f, visitado); //desenfileira e ainda torna o visitado .2(fim de vertices visitados)
+        int i = quebra_Fila(f, visited); //desenfileira e ainda torna o visited .2(fim de vertices visitados)
 
-        for(int j = 0; j < vertice+2; j++){
+        for(int j = 0; j < vert+2; j++){
 
-            //enquanto o vertice ainda não for visitado e se existe um caminho ali
-            if(visitado[j] == 0 && (grafo[i][j] - fluxo[i][j] > 0)){
+            //enquanto o vert ainda nï¿½o for visited e se existe um path ali
+            if(visited[j] == 0 && (graph[i][j] - flow[i][j] > 0)){
 
-                enfileirar(j, f, visitado); //enfileira ele pra ser analisado
-                caminho[j] = i; //chegar no j apartir de i
+                faz_fila(j, f, visited); //enfileira ele pra ser analisado
+                path[j] = i; //chegar no j apartir de i
             }
         }
 
     }
 
-    int check = visitado[B_destino-1]; //recebe o valor visitado, variando de 0,1 e 2
+    int check = visited[B_destiny-1]; //recebe o valor visited, variando de 0,1 e 2
 
-    free(visitado);
+    free(visited);
     free(f);
 
-    return (check == 2); //retorna 2 se achar um caminho até B-destino
+    return (check == 2); //retorna 2 se achar um path atï¿½ B-destino
 }
 

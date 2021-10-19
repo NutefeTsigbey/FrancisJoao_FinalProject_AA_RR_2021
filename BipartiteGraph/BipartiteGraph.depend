@@ -26,3 +26,57 @@
 	<stdio.h>
 	<stdlib.h>
 
+1634189632 source:c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\bfs.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1634189632 c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fila.h
+
+1634189632 source:c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1634189632 source:c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fordfulkerson.c
+	<stdio.h>
+	<stdlib.h>
+	"FordFulkerson.h"
+	"BFS.h"
+
+1634189632 c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fordfulkerson.h
+
+1634189632 c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\bfs.h
+
+1634189632 source:c:\users\joao lucas\desktop\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\main.c
+	"FordFulkerson.h"
+	<stdio.h>
+	<stdlib.h>
+
+1634615100 source:c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\bfs.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1634614991 c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fila.h
+
+1634614604 source:c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fordfulkerson.c
+	<stdio.h>
+	<stdlib.h>
+	"FordFulkerson.h"
+	"BFS.h"
+
+1634613410 c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fordfulkerson.h
+
+1634613446 c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\bfs.h
+
+1634614610 source:c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\main.c
+	"FordFulkerson.h"
+	<stdio.h>
+	<stdlib.h>
+
+1634614665 source:c:\users\joao lucas\desktop\livros\analize de algoritmo\francisjoao_finalproject_aa_rr_2021-main\francisjoao_finalproject_aa_rr_2021-main\bipartitegraph\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
