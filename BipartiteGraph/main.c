@@ -15,7 +15,7 @@ int main(){
     getchar();
     system("cls");
 
-    int vert, edge, task, employees; //declara��o dos itens a serem lidos na primeira linha
+    int vert, edge, task, employees; //declaração dos itens a serem lidos na primeira linha
 
     printf("Insira respectivamente a quantidade De VERTICES, ARESTAS, TAREFAS e EMPREGADOS \n");
     scanf("%d %d %d %d", &vert, &edge, &task, &employees);
